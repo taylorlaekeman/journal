@@ -1,0 +1,20 @@
+.wrapper {
+  border: solid lightgrey 1px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper > label {
+  padding: 16px;
+  padding-bottom: 0;
+}
+
+.wrapper > textarea {
+  border: none;
+  flex: 1;
+  font-family: inherit;
+  outline: none;
+  padding: 16px;
+  resize: none;
+}
