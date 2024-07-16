@@ -1,0 +1,15 @@
+.wrapper {
+  border: solid lightgrey 1px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.text {
+  border-top: solid lightgrey 1px;
+  padding: 16px;
+}
+
+.text > p {
+  margin: 0;
+}

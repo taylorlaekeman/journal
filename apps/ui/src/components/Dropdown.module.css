@@ -1,0 +1,14 @@
+.wrapper {
+  background: none;
+  border: solid lightgrey 1px;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  padding: 8px 16px;
+  width: 100%;
+}
+
+.wrapper.noBorder {
+  border: none;
+}
