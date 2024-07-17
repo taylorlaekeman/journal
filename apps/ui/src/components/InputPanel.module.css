@@ -1,19 +1,13 @@
-.wrapper {
-  border: solid lightgrey 1px;
-  border-radius: 4px;
-  display: flex;
-  flex-direction: column;
-}
-
-.wrapper > label {
+.inputPanelWrapper > label {
   padding: 16px;
   padding-bottom: 0;
 }
 
-.wrapper > textarea {
+.inputPanelWrapper > textarea {
   border: none;
   flex: 1;
   font-family: inherit;
+  max-height: 200px;
   outline: none;
   padding: 16px;
   resize: none;

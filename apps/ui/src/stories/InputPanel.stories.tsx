@@ -3,21 +3,29 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 
 import { InputPanel } from '../components/InputPanel';
+import { Border } from '../utils/border';
 
 const meta: Meta<React.ComponentProps<typeof InputPanel>> = {
   args: {
+    border: Border.Full,
     onChange: fn(),
     title: 'January 1, 2024',
     value: '-test\n-test\n-test',
   },
   component: InputPanel,
   parameters: {},
-  title: 'Atoms/InputPanel',
+  title: 'Molecules/InputPanel',
 };
 
 type Story = StoryObj<typeof InputPanel>;
 
 export const Default: Story = {};
+
+export const NoBorder: Story = {
+  args: {
+    border: Border.None,
+  },
+};
 
 export const InContainer: Story = {
   render: ({ title, value }) => (

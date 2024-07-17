@@ -2,6 +2,7 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Mode, SummaryPanel } from '../components/SummaryPanel';
+import { Border } from '../utils/border';
 
 const entries = {
   'Sunday, January 7, 2024': 'Sunday first\nSunday second\nSunday',
@@ -15,6 +16,7 @@ const entries = {
 
 const meta: Meta<React.ComponentProps<typeof SummaryPanel>> = {
   args: {
+    border: Border.Full,
     entries,
     expandedEntry: 'Monday, January 8, 2024',
     mode: Mode.Dropdown,
@@ -27,6 +29,14 @@ const meta: Meta<React.ComponentProps<typeof SummaryPanel>> = {
 type Story = StoryObj<typeof SummaryPanel>;
 
 export const Default: Story = {};
+
+export const NoBorder: Story = {
+  args: { border: Border.None },
+};
+
+export const OnlyBottomBorder: Story = {
+  args: { border: Border.OnlyBottom },
+};
 
 export const Radio: Story = {
   args: { mode: Mode.Radio },

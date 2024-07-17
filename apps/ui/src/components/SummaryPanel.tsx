@@ -1,16 +1,21 @@
 import React from 'react';
 
 import { Dropdown } from './Dropdown';
+import { Panel } from './Panel';
 import { RadioButtons } from './RadioButtons';
 import styles from './SummaryPanel.module.css';
+import { Border } from '../utils/border';
 import { noop } from '../utils/noop';
+import { Padding } from '../utils/padding';
 
 export function SummaryPanel({
+  border = Border.Full,
   entries = {},
   expandedEntry = '',
   mode = Mode.Dropdown,
   onExpandEntry = noop,
 }: {
+  border?: Border;
   entries?: Record<string, string>;
   expandedEntry?: string;
   mode?: Mode;
@@ -19,7 +24,7 @@ export function SummaryPanel({
   const keys = Object.keys(entries);
   const value = entries[expandedEntry];
   return (
-    <div className={styles.wrapper}>
+    <Panel border={border} padding={Padding.None}>
       <Selector
         mode={mode}
         onChange={onExpandEntry}
@@ -27,7 +32,7 @@ export function SummaryPanel({
         value={expandedEntry}
       />
       <Text value={value} />
-    </div>
+    </Panel>
   );
 }
 

@@ -1,31 +1,44 @@
 import React from 'react';
 
 import styles from './InputPanel.module.css';
+import { Panel } from './Panel';
+import { Border } from '../utils/border';
 import { noop } from '../utils/noop';
+import { Padding } from '../utils/padding';
 
 export function InputPanel({
+  border = Border.Full,
   id,
   onChange = noop,
   title,
   value,
 }: {
+  border?: Border;
   id?: string;
   onChange?: (newValue: string) => void;
   title?: string;
   value?: string;
 }): React.ReactElement {
   const scopedId = getId(id);
+  const lineCount = (value || '').split('\n').length;
+  const rowCount = Math.max(lineCount, 5);
   return (
-    <div id={scopedId} className={styles.wrapper}>
+    <Panel
+      border={border}
+      className={styles.inputPanelWrapper}
+      id={scopedId}
+      padding={Padding.None}
+    >
       {title !== undefined && (
         <label htmlFor={`${scopedId}-input`}>{title}</label>
       )}
       <textarea
         id={`${scopedId}-input`}
         onChange={(event) => onChange(event.target.value)}
+        rows={rowCount}
         value={value}
       />
-    </div>
+    </Panel>
   );
 }
 
