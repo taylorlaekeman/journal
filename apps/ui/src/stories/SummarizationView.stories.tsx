@@ -68,6 +68,12 @@ export const YearSummary: Story = {
   },
 };
 
+export const Placeholder: Story = {
+  args: {
+    summary: undefined,
+  },
+};
+
 export const InContainer: Story = {
   render: ({ expandedEntry, summary, ...args }) => (
     <SummarizationViewContainer

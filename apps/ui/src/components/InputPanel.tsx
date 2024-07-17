@@ -10,12 +10,14 @@ export function InputPanel({
   border = Border.Full,
   id,
   onChange = noop,
+  placeholder = '',
   title,
-  value,
+  value = '',
 }: {
   border?: Border;
   id?: string;
   onChange?: (newValue: string) => void;
+  placeholder?: string;
   title?: string;
   value?: string;
 }): React.ReactElement {
@@ -35,6 +37,7 @@ export function InputPanel({
       <textarea
         id={`${scopedId}-input`}
         onChange={(event) => onChange(event.target.value)}
+        placeholder={placeholder}
         rows={rowCount}
         value={value}
       />

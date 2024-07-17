@@ -34,6 +34,7 @@ export function SummarizationView({
       <InputPanel
         border={Border.None}
         onChange={onChangeSummary}
+        placeholder="Enter your summary here"
         title={summaryTitle}
         value={summary}
       />

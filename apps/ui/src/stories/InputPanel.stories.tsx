@@ -9,6 +9,7 @@ const meta: Meta<React.ComponentProps<typeof InputPanel>> = {
   args: {
     border: Border.Full,
     onChange: fn(),
+    placeholder: 'test placeholder',
     title: 'January 1, 2024',
     value: '-test\n-test\n-test',
   },
@@ -20,6 +21,12 @@ const meta: Meta<React.ComponentProps<typeof InputPanel>> = {
 type Story = StoryObj<typeof InputPanel>;
 
 export const Default: Story = {};
+
+export const Placeholder: Story = {
+  args: {
+    value: undefined,
+  },
+};
 
 export const NoBorder: Story = {
   args: {
