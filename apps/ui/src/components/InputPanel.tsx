@@ -21,7 +21,7 @@ export function InputPanel({
 }): React.ReactElement {
   const scopedId = getId(id);
   const lineCount = (value || '').split('\n').length;
-  const rowCount = Math.max(lineCount, 5);
+  const rowCount = Math.max(lineCount, 3);
   return (
     <Panel
       border={border}
