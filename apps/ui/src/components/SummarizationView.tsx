@@ -3,7 +3,7 @@ import React from 'react';
 import { InputPanel } from './InputPanel';
 import { Panel } from './Panel';
 import styles from './SummarizationView.module.css';
-import { SummaryPanel } from './SummaryPanel';
+import { Mode, SummaryPanel } from './SummaryPanel';
 import { Border } from '../utils/border';
 import { noop } from '../utils/noop';
 import { Padding } from '../utils/padding';
@@ -13,6 +13,7 @@ export function SummarizationView({
   expandedEntry = '',
   onChangeSummary = noop,
   onExpandEntry = noop,
+  selectionMode = Mode.Dropdown,
   summary = '',
   summaryTitle,
 }: {
@@ -20,6 +21,7 @@ export function SummarizationView({
   expandedEntry?: string;
   onChangeSummary?: (input: string) => void;
   onExpandEntry?: (input: string) => void;
+  selectionMode?: Mode;
   summary?: string;
   summaryTitle?: string;
 }): React.ReactElement {
@@ -29,6 +31,7 @@ export function SummarizationView({
         border={Border.OnlyBottom}
         entries={entries}
         expandedEntry={expandedEntry}
+        mode={selectionMode}
         onExpandEntry={onExpandEntry}
       />
       <InputPanel

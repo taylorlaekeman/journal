@@ -2,6 +2,7 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { SummarizationView } from '../components/SummarizationView';
+import { Mode } from '../components/SummaryPanel';
 
 const entries = {
   'Sunday, January 7, 2024': 'Sunday first\nSunday second\nSunday',
@@ -17,6 +18,7 @@ const meta: Meta<React.ComponentProps<typeof SummarizationView>> = {
   args: {
     entries,
     expandedEntry: 'Monday, January 8, 2024',
+    selectionMode: Mode.Dropdown,
     summary: 'test\ntest\ntest',
     summaryTitle: 'January 7–13, 2024',
   },
@@ -74,6 +76,12 @@ export const Placeholder: Story = {
   },
 };
 
+export const RadioSelectionMode: Story = {
+  args: {
+    selectionMode: Mode.Radio,
+  },
+};
+
 export const InContainer: Story = {
   render: ({ expandedEntry, summary, ...args }) => (
     <SummarizationViewContainer
@@ -88,11 +96,13 @@ function SummarizationViewContainer({
   entries = {},
   initialExpandedEntry = '',
   initialSummary = '',
+  selectionMode = Mode.Dropdown,
   summaryTitle,
 }: {
   entries?: Record<string, string>;
   initialExpandedEntry?: string;
   initialSummary?: string;
+  selectionMode?: Mode;
   summaryTitle?: string;
 }): React.ReactElement {
   const [expandedEntry, setExpandedEntry] =
@@ -104,6 +114,7 @@ function SummarizationViewContainer({
       expandedEntry={expandedEntry}
       onChangeSummary={setSummary}
       onExpandEntry={setExpandedEntry}
+      selectionMode={selectionMode}
       summary={summary}
       summaryTitle={summaryTitle}
     />
