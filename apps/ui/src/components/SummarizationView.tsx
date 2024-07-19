@@ -2,11 +2,12 @@ import React from 'react';
 
 import { InputPanel } from './InputPanel';
 import { Panel } from './Panel';
-import styles from './SummarizationView.module.css';
 import { Mode, SummaryPanel } from './SummaryPanel';
 import { Border } from '../utils/border';
 import { noop } from '../utils/noop';
 import { Padding } from '../utils/padding';
+
+export { Mode } from './SummaryPanel';
 
 export function SummarizationView({
   entries = {},
