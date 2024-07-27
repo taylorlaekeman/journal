@@ -7,7 +7,7 @@
     "format:check:ui": "nx run ui:format:check",
     "lint": "nx run-many -t lint",
     "start:ui": "nx dev ui",
-    "storybook:ui": "nx storybook ui",
+    "storybook": "nx storybook ui",
     "test": "nx run-many -t test"
   },
   "private": true,

@@ -34,6 +34,12 @@ export const NoBorder: Story = {
   },
 };
 
+export const NoTitle: Story = {
+  args: {
+    title: undefined,
+  },
+};
+
 export const InContainer: Story = {
   render: ({ title, value }) => (
     <InputPanelContainer initialValue={value} title={title} />
