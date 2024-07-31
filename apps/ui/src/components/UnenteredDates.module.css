@@ -1,0 +1,26 @@
+.header {
+  border-bottom: solid lightgrey 1px;
+  font-weight: inherit;
+  margin: 0;
+  padding: 8px 16px;
+}
+
+.list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list > li {
+  border-bottom: solid lightgrey 1px;
+  padding: 8px 16px;
+}
+
+.list > li:last-child {
+  border-bottom: none;
+}
+
+.list > li > a {
+  color: inherit;
+  font-size: 0.9rem;
+}
