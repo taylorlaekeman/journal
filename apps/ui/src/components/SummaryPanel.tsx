@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import React from 'react';
 
 import { Dropdown } from './Dropdown';
@@ -21,17 +22,14 @@ export function SummaryPanel({
   mode?: Mode;
   onExpandEntry?: (input: string) => void;
 }): React.ReactElement {
-  const keys = Object.keys(entries);
-  const value = entries[expandedEntry];
   return (
     <Panel border={border} padding={Padding.None}>
-      <Selector
-        mode={mode}
-        onChange={onExpandEntry}
-        options={keys}
-        value={expandedEntry}
-      />
-      <Text value={value} />
+      {Object.entries(entries).map(([key, value], index) => (
+        <div key={key}>
+          <Text hasBorderTop={index !== 0} value={key} />
+          <Text value={value} />
+        </div>
+      ))}
     </Panel>
   );
 }
@@ -75,10 +73,16 @@ function Selector({
   }
 }
 
-function Text({ value = '' }: { value?: string }): React.ReactElement {
+function Text({
+  hasBorderTop = true,
+  value = '',
+}: {
+  hasBorderTop?: boolean;
+  value?: string;
+}): React.ReactElement {
   const lines = value.split('\n');
   return (
-    <div className={styles.text}>
+    <div className={clsx(styles.text, hasBorderTop && styles.borderTop)}>
       {lines.map((line) => (
         <p key={line}>{line}</p>
       ))}

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { InputPanel } from './InputPanel';
-import { Panel } from './Panel';
+import { Panel, PanelItem } from './Panel';
 import { Mode, SummaryPanel } from './SummaryPanel';
 import { Border } from '../utils/border';
 import { noop } from '../utils/noop';
@@ -27,21 +27,25 @@ export function SummarizationView({
   summaryTitle?: string;
 }): React.ReactElement {
   return (
-    <Panel padding={Padding.None}>
-      <SummaryPanel
-        border={Border.OnlyBottom}
-        entries={entries}
-        expandedEntry={expandedEntry}
-        mode={selectionMode}
-        onExpandEntry={onExpandEntry}
-      />
-      <InputPanel
-        border={Border.None}
-        onChange={onChangeSummary}
-        placeholder="Enter your summary here"
-        title={summaryTitle}
-        value={summary}
-      />
+    <Panel isResponsive padding={Padding.None}>
+      <PanelItem>
+        <SummaryPanel
+          border={Border.OnlyBottom}
+          entries={entries}
+          expandedEntry={expandedEntry}
+          mode={selectionMode}
+          onExpandEntry={onExpandEntry}
+        />
+      </PanelItem>
+      <PanelItem>
+        <InputPanel
+          border={Border.None}
+          onChange={onChangeSummary}
+          placeholder="Enter your summary here"
+          title={summaryTitle}
+          value={summary}
+        />
+      </PanelItem>
     </Panel>
   );
 }

@@ -1,0 +1,39 @@
+.header {
+  align-items: baseline;
+  border-bottom: solid lightgrey 1px;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 16px;
+}
+
+.header > p {
+  margin: 0;
+  padding: 0;
+}
+
+.body {
+  justify-items: center;
+  display: grid;
+  grid-gap: 4px 0;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 16px;
+}
+
+.day {
+  align-items: center;
+  border-radius: 50%;
+  display: flex;
+  height: 2rem;
+  justify-content: center;
+  width: 2rem;
+}
+
+.day > p {
+  margin: 0;
+  padding: 0;
+}
+
+.highlight-red {
+  background-color: mistyrose;
+  color: maroon;
+}

@@ -10,12 +10,14 @@ export function Panel({
   children = '',
   className: inputClassName = '',
   id,
+  isResponsive = false,
   padding = Padding.Full,
 }: {
   border?: Border;
   children?: React.ReactNode;
   className?: string;
   id?: string;
+  isResponsive?: boolean;
   padding?: Padding;
 }): React.ReactElement {
   return (
@@ -24,6 +26,7 @@ export function Panel({
         styles.panelWrapper,
         styles[`padding-${padding}`],
         styles[`border-${border}`],
+        isResponsive && styles.responsive,
         inputClassName
       )}
       id={id}
@@ -31,4 +34,12 @@ export function Panel({
       {children}
     </div>
   );
+}
+
+export function PanelItem({
+  children,
+}: {
+  children?: React.ReactNode;
+}): React.ReactElement {
+  return <div className={styles.panelItem}>{children}</div>;
 }

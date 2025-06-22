@@ -1,5 +1,6 @@
 import React from 'react';
 
+import styles from './SummarizationPage.module.css';
 import { PageWrapper } from './PageWrapper';
 import { Mode, SummarizationView } from './SummarizationView';
 import { noop } from '../utils/noop';
